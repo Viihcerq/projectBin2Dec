@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Converter converter = new Converter();
         Scanner le = new Scanner(System.in);
 
         System.out.println("Insira um numero binario");
@@ -11,7 +12,7 @@ public class Main {
             System.out.println("Digite algo entre 1 ou 0");
             return;
         }else {
-            conversorBinario(binario);
+            converter.converterBinaryFromDecimal(binario);
         }
 
 
