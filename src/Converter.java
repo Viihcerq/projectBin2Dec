@@ -28,12 +28,14 @@ public class Converter {
     public void convertToBinary(String numero){
         int numeroDecimal = Integer.parseInt(numero);
         String binary = "";
-        if (!(numeroDecimal < 0)) {
+        if (numeroDecimal > 0) {
             while (numeroDecimal > 0) {
                 binary = (numeroDecimal % 2) + binary;
                 numeroDecimal = numeroDecimal / 2;
             }
             System.out.println("Binario do numero: " + numero + " é: " + binary);
+        }else {
+            System.out.println("Digite um numero maior que 0");
         }
     }
 }
