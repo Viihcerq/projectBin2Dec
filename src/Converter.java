@@ -1,10 +1,11 @@
 public class Converter {
-    private double decimal;
 
 
-    public void converterBinaryFromDecimal(String binary){
+    public void convertToDecimal (String binary){
+        double decimal = 0;
         int length = binary.length();
-        if (length <= 8){
+
+        if (length <= 8 && !verifyDigitBinary(binary)){
             for (int i = 0; i < length; i++) {
                 char digit = binary.charAt(i);
                 int value = Character.getNumericValue(digit);
@@ -16,6 +17,24 @@ public class Converter {
         }
     }
 
+    private boolean verifyDigitBinary(String binary) {
+        if (!binary.matches("[01]+")){
+            System.out.println("Digite algo entre 1 ou 0");
+            return true;
+        }
+        return false;
+    }
 
+    public void convertToBinary(String numero){
+        int numeroDecimal = Integer.parseInt(numero);
+        String binary = "";
+        if (!(numeroDecimal < 0)) {
+            while (numeroDecimal > 0) {
+                binary = (numeroDecimal % 2) + binary;
+                numeroDecimal = numeroDecimal / 2;
+            }
+            System.out.println("Binario do numero: " + numero + " é: " + binary);
+        }
+    }
 }
 
